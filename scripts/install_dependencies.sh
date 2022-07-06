@@ -7,9 +7,9 @@ UNAME=$(uname)
 
 case "$UNAME" in
     Linux)
-        sudo apt-get update -qq
-        sudo apt-get install -q -y mingw-w64 g++-mingw-w64
-        sudo apt-get install -q -y build-essential cmake             \
+         apt-get update -qq
+         apt-get install -q -y mingw-w64 g++-mingw-w64
+         apt-get install -q -y build-essential cmake             \
                                    libudev-dev libbluetooth-dev      \
                                    libdbus-1-dev                     \
                                    libv4l-dev libopencv-dev          \
