@@ -157,18 +157,7 @@ if [ ! -z "$PSMOVEAPI_CUSTOM_PLATFORM_NAME" ]; then
 fi
 
 # Git revision identifier
-# Note that docker cannot run "git describe --tags"
-if [[ $1 == "--docker" ]]; then
-    if [ ! -z "$2" ]; then
-        PSMOVEAPI_REVISION="$2"
-    else
-        echo "Must run \"./build_package.sh --docker \${PS_MOVE_REVISION}\"
-        in irl_control_container's Dockerfile to build psmove properly."
-        exit 1
-    fi
-else
-    PSMOVEAPI_REVISION=$(git describe --tags)
-fi
+PSMOVEAPI_REVISION=$(git describe --tags)
 
 DEST="psmoveapi-${PSMOVEAPI_REVISION}-${PLATFORM_NAME}"
 mkdir -p "$DEST"
